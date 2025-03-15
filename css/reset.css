@@ -1,0 +1,19 @@
+body {
+    margin: 0;
+    font-family: '微软雅黑', sans-serif;
+    background: #ffe6f0;
+}
+
+.float_left {
+    float: left;
+}
+
+.float_right {
+    float: right;
+}
+
+.clear_float::after {
+    content: "";
+    display: block;
+    clear: both;
+}
