@@ -1,21 +1,37 @@
 document.addEventListener('click', event => {
-    const yuiyi = document.createElement("div")
-    yuiyi.innerText = "🍡"
-    yuiyi.classList.add("yuiyi")
-    yuiyi.style.fontSize = "24px"
-    yuiyi.style.position = "absolute"
-    yuiyi.style.top = event.pageY + "px"
-    yuiyi.style.left = event.pageX + "px"
-    yuiyi.style.zIndex = "10"
-    yuiyi.style.transition = "all 1s linear"
-    yuiyi.style.userSelect = "none"
-    document.body.appendChild(yuiyi)
+    const count = 10
+    const totalAngle = 360
+    const angleBase = totalAngle / count
 
-    setTimeout(() => {
-        yuiyi.style.transform = "translateY(-60px)"
-        yuiyi.style.opacity = "0.0"
+    for (let i = 0; i < count; i++) {
+        const innerTextRandom = ["🍡", "🌸", "⭐", "✨"]
+        const fontSizeRandom = parseInt(Math.random() * 7 + 24)
+
+        const angle = Math.random() * angleBase + (i * angleBase)
+        const distance = parseInt(Math.random() * 31 + 60)
+        const translateX = Math.cos(angle * Math.PI / 180) * distance
+        const translateY = -Math.sin(angle * Math.PI / 180) * distance
+
+        const yuiyi = document.createElement("div")
+        yuiyi.innerText = innerTextRandom[parseInt(Math.random() * (innerTextRandom.length))]
+        yuiyi.classList.add("yuiyi")
+        yuiyi.style.fontSize = `${fontSizeRandom}px`
+        yuiyi.style.position = "absolute"
+        yuiyi.style.top = event.pageY + "px"
+        yuiyi.style.left = event.pageX + "px"
+        yuiyi.style.zIndex = "10"
+        yuiyi.style.transition = "all 1s linear"
+        yuiyi.style.userSelect = "none"
+        yuiyi.style.pointerEvents = "none"
+        // yuiyi.style.cssText=``
+        document.body.appendChild(yuiyi)
+
         setTimeout(() => {
-            document.body.removeChild(yuiyi)
-        }, 1000)
-    }, 0)
+            yuiyi.style.transform = `translateX(${translateX}px) translateY(${translateY}px)`
+            yuiyi.style.opacity = "0.0"
+            setTimeout(() => {
+                document.body.removeChild(yuiyi)
+            }, 1000)
+        }, 0)
+    }
 })

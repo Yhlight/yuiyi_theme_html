@@ -26,7 +26,7 @@
     background: white;
     border-radius: 15px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    transition: all 0.35s linear;
+    transition: all 0.45s linear;
 }
 
 .yuiyi_show_img img {
@@ -34,6 +34,8 @@
     height: 100%;
     object-fit: cover;
     border-radius: 8px;
+    user-select: none;
+    -webkit-user-drag: none;
 }
 
 .yuiyi_show_img:hover {
@@ -47,7 +49,7 @@
     border-radius: 15px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     color: rgb(255, 192, 203);
-    transition: all 0.35s linear;
+    transition: all 0.45s linear;
 }
 
 .yuiyi_info:hover {
@@ -59,7 +61,7 @@
     padding: 15px;
     border-bottom: 1px solid #eee;
     border-radius: 8px;
-    transition: all 0.5s linear;
+    transition: all 0.6s linear;
 }
 
 .yuiyi_info .info_item h3 {
@@ -108,5 +110,6 @@
     border-radius: 4px;
     object-fit: cover;
     user-select: none;
+    -webkit-user-drag: none;
     margin-bottom: 15px;
 }
