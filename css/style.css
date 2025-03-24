@@ -102,6 +102,7 @@
     font-size: 32px;
     column-span: all;
     text-align: center;
+    margin-top: 15px;
 }
 
 .yuiyi_gallery .yuiyi_photos img {
@@ -111,5 +112,5 @@
     object-fit: cover;
     user-select: none;
     -webkit-user-drag: none;
-    margin-bottom: 15px;
+    margin-top: 15px;
 }

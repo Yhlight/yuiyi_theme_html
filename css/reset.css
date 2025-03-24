@@ -17,3 +17,7 @@ body {
     display: block;
     clear: both;
 }
+
+h1 {
+    margin: 0;
+}

@@ -20,7 +20,7 @@ document.addEventListener('click', event => {
         yuiyi.style.top = event.pageY + "px"
         yuiyi.style.left = event.pageX + "px"
         yuiyi.style.zIndex = "10"
-        yuiyi.style.transition = "all 1s linear"
+        yuiyi.style.transition = "all 0.75s cubic-bezier(.6,.28,0,.8)"
         yuiyi.style.userSelect = "none"
         yuiyi.style.pointerEvents = "none"
         // yuiyi.style.cssText=``
@@ -28,6 +28,7 @@ document.addEventListener('click', event => {
 
         setTimeout(() => {
             yuiyi.style.transform = `translateX(${translateX}px) translateY(${translateY}px)`
+            yuiyi.style.scale = 0.75
             yuiyi.style.opacity = "0.0"
             setTimeout(() => {
                 document.body.removeChild(yuiyi)
